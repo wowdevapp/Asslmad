@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
+import { OfferModal } from './components/modals/OfferModal'
 import RegisterModal from './components/modals/RegisterModal'
 import Navbar from './components/navbar/Navbar'
 import './globals.css'
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={font.className}>
         <ToasterProvider/>
         <RegisterModal />
+        <OfferModal />
         <Navbar></Navbar>
         {children}
         </body>

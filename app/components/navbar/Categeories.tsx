@@ -1,21 +1,11 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { BsSnow } from 'react-icons/bs';
-import { FaSkiing } from 'react-icons/fa';
 import {
-    GiBarn,
-    GiBoatFishing,
-    GiCactus,
-    GiCastle,
-    GiCaveEntrance,
-    GiForestCamp,
-    GiIsland,
-    GiWindmill
+  GiWindmill
 } from 'react-icons/gi';
-import { IoDiamond } from 'react-icons/io5';
 import { MdOutlineVilla } from 'react-icons/md';
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import { TbBeach, TbMountain } from 'react-icons/tb';
 import { CategoryBox } from '../CategoryBox';
 import { Container } from '../Container';
 
@@ -24,26 +14,31 @@ import { Container } from '../Container';
 
 export const categories = [
   {
-    label: 'Beach',
+    label: 'Sport',
     icon: TbBeach,
     description: 'This property is close to the beach!',
   },
   {
-    label: 'Windmills',
+    label: 'Education',
     icon: GiWindmill,
     description: 'This property is has windmills!',
   },
   {
-    label: 'Modern',
+    label: 'Art',
     icon: MdOutlineVilla,
     description: 'This property is modern!'
   },
   {
-    label: 'Countryside',
+    label: 'Langues',
     icon: TbMountain,
     description: 'This property is in the countryside!'
   },
   {
+    label: 'Craft',
+    icon: TbMountain,
+    description: 'This property is in the countryside!'
+  },
+  /* {
     label: 'Pools',
     icon: TbPool,
     description: 'This is property has a beautiful pool!'
@@ -97,7 +92,7 @@ export const categories = [
     label: 'Lux',
     icon: IoDiamond,
     description: 'This property is brand new and luxurious!'
-  }
+  } */
 ]
 
 const Categories = () => {
