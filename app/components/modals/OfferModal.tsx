@@ -9,7 +9,7 @@ enum STEPS {
 import useOfferModal from '@/app/hooks/useOfferModal';
 import dynamic from 'next/dynamic';
 import { useMemo, useState } from 'react';
-import { FieldValues, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Heading } from '../Heading';
 import CategoryInput from '../inputs/CategoryInput';
 import CountrySelect from '../inputs/CountrySelect';
@@ -139,6 +139,10 @@ export const OfferModal = () => {
             <Input formatPrice type='number' id="price" label='Price' disabled={isLoading} register={register} errors={errors}/>
           </div>
         )
+      }
+
+      const onSubmit:SubmitHandler<FieldValues> = (data)=>{
+        
       }
 
   return (
