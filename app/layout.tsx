@@ -11,8 +11,6 @@ import Navbar from './components/navbar/Navbar'
 import createEmotionCache from './createEmotionCache'
 import './globals.css'
 import ToasterProvider from './providers/ToasterProvider'
-
-
 const clientSideEmotionCache = createEmotionCache();
 export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -23,6 +21,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#EAB308',
+      contrastText: '#fff',
     },
     secondary: {
       main: '#19857b',
@@ -47,9 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+    <body className={font.className}>
       <CacheProvider value={emotionCache} >
         <ThemeProvider theme={theme}>
-          <body className={font.className}>
             <ToasterProvider />
             <RegisterModal />
             <OfferModal />
@@ -57,9 +56,9 @@ export default function RootLayout({
             <div className='pb-20 pt-28'>
               {children}
             </div>
-          </body>
         </ThemeProvider>
       </CacheProvider>
+    </body>
     </html>
   )
 }

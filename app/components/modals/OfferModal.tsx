@@ -12,9 +12,9 @@ import { useMemo, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Heading } from '../Heading';
 import CategoryInput from '../inputs/CategoryInput';
-import CountrySelect from '../inputs/CountrySelect';
 import ImageUpload from '../inputs/ImageUpload';
 import { Input } from '../inputs/Input';
+import LocationInput from '../locationInput';
 import { categories } from '../navbar/Categeories';
 import { Modal } from './Modal';
  
@@ -23,6 +23,7 @@ export const OfferModal = () => {
     const offerModal= useOfferModal();
     const [step,setStep] = useState(STEPS.CATEGORY);
     const [isLoading,setIsLoading] =useState(false)
+    const [center,loadCenter]=useState([35.70080147711912,-5.950384074847163])
     const {register,handleSubmit,setValue,watch,formState:{errors}}=useForm<FieldValues>(
       {
         defaultValues:{
@@ -38,6 +39,9 @@ export const OfferModal = () => {
         }
       }
     )
+    const setCenter = (value)=>{
+      loadCenter(value)
+    }
     const category = watch('category');
     const location = watch('location');
     const imageSrc = watch('imageSrc');
@@ -99,10 +103,11 @@ export const OfferModal = () => {
             <Heading 
               title='Where is your location'
               subtitle='Help students find you' />
-              <CountrySelect 
+              <LocationInput setCenter={setCenter} />
+              {/* <CountrySelect 
                   value={location} 
-                 onChange={(value) => setCustumValue('location', value)}  />
-                 <Map center={location?.latlng} />
+                 onChange={(value) => setCustumValue('location', value)}  /> */}
+                 <Map center={center} />
           </div>
         )
       }

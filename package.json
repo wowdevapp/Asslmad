@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^4.0.5",
+    "@devexpress/dx-react-scheduler": "^4.0.5",
     "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.2",
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
@@ -22,6 +25,8 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "leaflet": "^1.9.4",
+    "load-script": "^2.0.0",
+    "lodash": "^4.17.21",
     "next": "13.4.12",
     "next-cloudinary": "^4.16.2",
     "postcss": "8.4.27",
